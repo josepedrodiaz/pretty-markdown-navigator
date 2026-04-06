@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Markdown Navigator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <header class="sidebar-header">
+        <div class="brand">
+          <span class="logo">📖</span>
+          <h1>Markdown Navigator</h1>
+        </div>
+        <button id="pick-folder" class="primary-btn" title="Elegir carpeta">
+          📂 Abrir carpeta
+        </button>
+        <div class="search-wrap">
+          <input id="search" type="search" placeholder="Buscar archivos..." />
+        </div>
+      </header>
+      <nav id="tree" class="tree" aria-label="Árbol de archivos">
+        <div class="empty-state">
+          <p>👋 Bienvenido</p>
+          <small>Pulsa <strong>Abrir carpeta</strong> para empezar a navegar tus markdowns.</small>
+        </div>
+      </nav>
+    </aside>
+
+    <main id="viewer">
+      <div id="breadcrumb" class="breadcrumb"></div>
+      <article id="content" class="markdown-body">
+        <div class="welcome">
+          <h1>✨ Markdown Navigator</h1>
+          <p>Una forma <em>preciosa</em> de leer tus archivos <code>.md</code>.</p>
+          <ol>
+            <li>Pulsa <strong>📂 Abrir carpeta</strong> arriba a la izquierda.</li>
+            <li>Selecciona cualquier carpeta de tu equipo.</li>
+            <li>Haz clic en cualquier <code>.md</code> del árbol para verlo renderizado.</li>
+          </ol>
+          <p class="hint">💡 Tu navegador te pedirá permiso para leer la carpeta. Todo se procesa <strong>localmente</strong>, nada sale de tu equipo.</p>
+        </div>
+      </article>
+    </main>
+  </div>
+
+  <script src="marked.min.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
