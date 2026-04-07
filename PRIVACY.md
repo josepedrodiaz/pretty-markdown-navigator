@@ -1,52 +1,64 @@
-# Política de privacidad — Pretty Markdown Navigator
+# Privacy Policy — Pretty Markdown Navigator
 
-_Última actualización: 6 de abril de 2026_
+_Last updated: April 6, 2026_
 
-**Pretty Markdown Navigator** es una extensión de Chrome que permite navegar carpetas locales y leer archivos Markdown renderizados con un formato cuidado.
+**Pretty Markdown Navigator** is a Chrome extension that lets you browse local folders and read Markdown files rendered with a beautiful style.
 
-## Resumen rápido
+## Quick summary
 
-**No recopilamos, almacenamos ni transmitimos ningún dato personal del usuario.** Toda la actividad de la extensión ocurre localmente en tu navegador.
+**We do not collect, store or transmit any user data.** All extension activity happens locally in your browser.
 
-## Datos que NO se recogen
+## Data we DO NOT collect
 
-La extensión **no** recoge ni envía a ningún servidor:
+The extension does **not** collect or send to any server:
 
-- Información personal identificable (nombre, email, dirección, etc.)
-- Información de salud, financiera, de autenticación o credenciales
-- Comunicaciones personales (emails, mensajes, etc.)
-- Localización
-- Historial de navegación web
-- Actividad de usuario (clicks, scrolls, métricas analíticas)
-- Contenido de los archivos abiertos
+- Personally identifiable information (name, email, address, etc.)
+- Health, financial, authentication or credential information
+- Personal communications (emails, messages, etc.)
+- Location data
+- Web browsing history
+- User activity (clicks, scrolls, analytics)
+- The contents of any opened files
 
-## Datos que se procesan localmente
+## Data processed locally
 
-Cuando eliges una carpeta con el botón "Abrir carpeta", la extensión usa la **File System Access API** del navegador para:
+When you pick a folder with the "Open folder" button, the extension uses the browser's **File System Access API** to:
 
-1. Leer la lista de archivos y subcarpetas (solo nombres) para mostrar el árbol de navegación.
-2. Leer el contenido de los archivos `.md` que tú abres explícitamente, para renderizarlos.
+1. List the names of files and subfolders to render the navigation tree.
+2. Read the contents of `.md` files **only when you explicitly click them**, in order to render them.
 
-Este contenido **se mantiene únicamente en la memoria de tu navegador** durante la sesión y se almacena temporalmente en `chrome.storage.session` para poder pasarlo entre el side panel y la pestaña del visor. **Nunca sale de tu equipo**, no se envía a ningún servidor (ni nuestro ni de terceros) y se descarta cuando cierras Chrome.
+This content is **kept only in your browser's memory** during the session and stored temporarily in `chrome.storage.session` to pass it between the side panel and the viewer tab. **It never leaves your computer**, it is never sent to any server (ours or anyone else's) and it is discarded when you close Chrome.
 
-## Permisos solicitados
+## Permissions requested
 
-- `sidePanel` — para mostrar la interfaz de navegación en el panel lateral de Chrome.
-- `storage` — para pasar el contenido del archivo abierto entre el side panel y la pestaña del visor (solo `chrome.storage.session`, que se borra al cerrar el navegador).
-- `tabs` — únicamente para abrir la pestaña interna del visor (`viewer.html`) cuando haces clic en un archivo.
+- `sidePanel` — to display the navigation interface in Chrome's side panel.
+- `storage` — to pass the open file's content between the side panel and the viewer tab (only `chrome.storage.session`, which is cleared when the browser closes).
+- `tabs` — only to open the extension's internal viewer page (`viewer.html`) when you click a file. The extension does **not** read URLs, titles or contents of any other tabs.
 
-No se solicita ningún permiso de host (`host_permissions`), por lo que la extensión no puede leer ni modificar ninguna página web que visites.
+## Content script (floating launcher)
 
-## Servicios de terceros
+The extension injects a small floating launcher button on every web page (via a content script). This button has a single purpose: send a message to the extension's service worker so it can re-open the side panel after you collapse it. The content script:
 
-Ninguno. La extensión no carga código remoto, no usa CDNs en tiempo de ejecución (la librería `marked` está empaquetada localmente), no incluye trackers ni analytics, y no se comunica con ningún servidor.
+- **Does not** read, modify or transmit any page content.
+- **Does not** read cookies, localStorage, form data or any other browser state.
+- **Does not** track navigation between pages.
+- Only adds a single DOM element (the floating button) and listens for clicks on that element.
+- Stores a single dismissal flag in the page's own `sessionStorage` (not synced or transmitted).
 
-## Código abierto
+You can right-click the launcher button to hide it for the rest of the browser session, or disable the extension if you don't want it injected.
 
-El código fuente completo está disponible en GitHub y puede ser auditado por cualquiera:
+The keyboard shortcut `Ctrl/Cmd + Shift + M` provides the same functionality without any content script involvement.
+
+## Third-party services
+
+None. The extension does not load remote code, does not use runtime CDNs (the `marked` library is bundled locally), does not include trackers or analytics, and does not communicate with any server.
+
+## Open source
+
+The full source code is available on GitHub and can be audited by anyone:
 
 https://github.com/josepedrodiaz/pretty-markdown-navigator
 
-## Contacto
+## Contact
 
-Si tienes dudas sobre esta política, abre un issue en el repositorio de GitHub indicado arriba.
+If you have questions about this policy, please open an issue in the repository above.

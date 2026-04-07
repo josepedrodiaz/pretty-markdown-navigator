@@ -1,131 +1,146 @@
 # Pretty Markdown Navigator — Chrome Web Store listing
 
-Textos listos para copiar/pegar en el formulario del [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole).
+Texts ready to copy/paste into the [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole) form.
 
 ---
 
-## Nombre (Name)
+## Name
 ```
 Pretty Markdown Navigator
 ```
 
-## Resumen corto (Short description) — máx. 132 caracteres
+## Short description (max 132 characters)
 ```
-Navega carpetas locales y lee tus archivos Markdown con un formato precioso, índice automático y búsqueda. 100 % local.
+Browse local folders and read your Markdown files with a beautiful viewer, automatic outline and search. 100% local.
 ```
-*(124 caracteres)*
+*(116 characters)*
 
-## Categoría
+## Category
 ```
-Productividad
-```
-
-## Idioma principal
-```
-Español
+Productivity
 ```
 
-## Descripción detallada (Detailed description)
+## Primary language
+```
+English
+```
+
+## Detailed description
 
 ```
-✨ Pretty Markdown Navigator convierte Chrome en un lector elegante de archivos Markdown locales. Abre cualquier carpeta de tu equipo, navega su contenido desde el panel lateral y abre cualquier archivo .md a pantalla completa con un renderizado precioso, sin salir del navegador.
+✨ Pretty Markdown Navigator turns Chrome into an elegant reader for local Markdown files. Open any folder on your computer, browse it from the side panel and view any .md file in a full tab with beautiful rendering — without leaving the browser.
 
 ━━━━━━━━━━━━━━━━━━━━
-✨ CARACTERÍSTICAS
+✨ FEATURES
 ━━━━━━━━━━━━━━━━━━━━
 
-📂 NAVEGADOR DE CARPETAS LOCAL
-Selecciona cualquier carpeta de tu equipo con un solo clic. La extensión usa la File System Access API del navegador, lo que significa que TÚ controlas exactamente a qué carpeta accede.
+📂 LOCAL FOLDER BROWSER
+Pick any folder on your computer with one click. The extension uses the browser's File System Access API, which means YOU control exactly which folder it accesses.
 
-📑 TRES VISTAS EN EL PANEL LATERAL
-• Carpetas — árbol expandible/colapsable con búsqueda por nombre.
-• Índice — outline automático del documento abierto, con navegación clic-a-sección.
-• Buscar — búsqueda dentro del documento actual con resultados resaltados.
+📑 THREE VIEWS IN THE SIDE PANEL
+• Folders — expandable/collapsible tree with name search.
+• Outline — automatic outline of the open document, click any heading to jump to it.
+• Search — in-document search with highlighted results.
 
-🎨 RENDERIZADO PRECIOSO
-Estilo cuidado al detalle: tipografía limpia, encabezados con gradiente, code blocks oscuros estilo GitHub, tablas, blockquotes, listas de tareas, separadores elegantes y soporte completo de GitHub Flavored Markdown (GFM).
+🎨 BEAUTIFUL RENDERING
+Carefully designed styling: clean typography, gradient headings, GitHub-style dark code blocks, tables, blockquotes, task lists, elegant separators and full GitHub Flavored Markdown (GFM) support.
 
-🌒 TEMA OSCURO
-El panel lateral usa un tema oscuro nativo que descansa la vista durante sesiones largas de lectura.
+🌒 NATIVE DARK THEME
+The side panel uses a native dark theme that's easy on the eyes during long reading sessions.
 
-🪟 VISOR A PANTALLA COMPLETA
-Cada archivo se abre en una pestaña independiente, así puedes tener varios documentos abiertos a la vez y navegar entre ellos como pestañas normales del navegador.
+🪟 FULL-TAB VIEWER
+Each file opens in its own browser tab, so you can keep multiple documents open at once and navigate between them like normal browser tabs.
 
-⚡ RÁPIDO Y LIGERO
-Sin frameworks pesados, sin telemetría, sin llamadas a servidores. Carga instantánea.
+🪄 FLOATING LAUNCHER + SHORTCUT
+A small floating button on every page lets you re-open the side panel with one click after collapsing it. Right-click the button to dismiss it for the session, or use the Ctrl/Cmd + Shift + M keyboard shortcut.
 
-━━━━━━━━━━━━━━━━━━━━
-🔒 PRIVACIDAD
-━━━━━━━━━━━━━━━━━━━━
-
-Pretty Markdown Navigator funciona 100 % localmente:
-
-• No recoge ni envía ningún dato a ningún servidor.
-• No incluye trackers, analytics ni código remoto.
-• No tiene permisos de host (no puede leer las páginas web que visitas).
-• La librería de renderizado (marked) viene empaquetada localmente, no se carga desde ningún CDN.
-• El contenido de los archivos solo vive en la memoria de tu navegador durante la sesión.
+⚡ FAST AND LIGHTWEIGHT
+No heavy frameworks, no telemetry, no server calls. Loads instantly.
 
 ━━━━━━━━━━━━━━━━━━━━
-💡 IDEAL PARA
+🔒 PRIVACY
 ━━━━━━━━━━━━━━━━━━━━
 
-• Leer documentación técnica de proyectos (README.md, CONTRIBUTING.md…)
-• Repasar notas de Obsidian, Logseq, Bear o cualquier sistema basado en archivos .md
-• Navegar repositorios clonados localmente
-• Lectura rápida de archivos Markdown sin abrir un editor
+Pretty Markdown Navigator runs 100% locally:
+
+• Does not collect or send any data to any server.
+• No trackers, no analytics, no remote code.
+• No host permissions to read pages you visit (the floating launcher content script only adds a DOM element and never reads page content).
+• The rendering library (marked) is bundled locally — never loaded from a CDN.
+• File contents only live in your browser's memory during the session.
 
 ━━━━━━━━━━━━━━━━━━━━
-🆓 GRATIS Y CÓDIGO ABIERTO
+💡 GREAT FOR
 ━━━━━━━━━━━━━━━━━━━━
 
-Pretty Markdown Navigator es totalmente gratuito y de código abierto bajo licencia MIT. Audita, contribuye o haz fork:
+• Reading project documentation (README.md, CONTRIBUTING.md, …)
+• Reviewing notes from Obsidian, Logseq, Bear or any file-based note system
+• Browsing locally cloned repositories
+• Quickly reading Markdown files without opening an editor
+
+━━━━━━━━━━━━━━━━━━━━
+🆓 FREE AND OPEN SOURCE
+━━━━━━━━━━━━━━━━━━━━
+
+Pretty Markdown Navigator is completely free and open source under the MIT license. Audit, contribute or fork:
 
 https://github.com/josepedrodiaz/pretty-markdown-navigator
 
 ━━━━━━━━━━━━━━━━━━━━
-🚀 CÓMO USAR
+🚀 HOW TO USE
 ━━━━━━━━━━━━━━━━━━━━
 
-1. Haz clic en el icono de la extensión (M morada) en la barra de herramientas.
-2. Se abrirá el panel lateral. Pulsa "📂 Abrir carpeta".
-3. Elige cualquier carpeta de tu equipo y acepta el permiso del navegador.
-4. Haz clic en cualquier archivo .md del árbol → se abrirá en una pestaña nueva con el formato precioso.
-5. Usa las pestañas del panel para ver el índice del documento o buscar dentro de él.
+1. Click the extension icon (purple M) in the toolbar.
+2. The side panel opens. Click "📂 Open folder".
+3. Pick any folder from your computer and accept the browser permission prompt.
+4. Click any .md file in the tree → it opens in a new tab with the beautiful rendering.
+5. Use the side panel tabs to view the document outline or search inside it.
+6. Closed the panel? Click the floating launcher at the bottom-right of any page or press Ctrl/Cmd + Shift + M.
 
-¿Sugerencias o problemas? Abre un issue en GitHub.
+Suggestions or issues? Open an issue on GitHub.
 ```
 
-## Justificación de permisos
+## Permission justifications
 
 ### `sidePanel`
 ```
-La interfaz principal de la extensión es un panel lateral persistente desde el que el usuario navega su carpeta local y abre archivos. Sin este permiso no puede mostrarse el panel.
+The extension's main interface is a persistent side panel from which the user navigates their local folder and opens files. Without this permission the panel cannot be shown.
 ```
 
 ### `storage`
 ```
-Se usa exclusivamente chrome.storage.session (memoria volátil que se borra al cerrar el navegador) para pasar el contenido del archivo Markdown abierto desde el side panel a la pestaña del visor. No se persiste nada en disco.
+We use chrome.storage.session (volatile memory cleared when the browser closes) exclusively to pass the open Markdown file's content from the side panel to the viewer tab. Nothing is persisted to disk.
 ```
 
 ### `tabs`
 ```
-Únicamente se usa chrome.tabs.create() para abrir la página interna del visor (viewer.html, parte de la propia extensión) cuando el usuario hace clic en un archivo. No se accede a ninguna pestaña del usuario, ni a su URL, título o contenido.
+We only call chrome.tabs.create() to open the extension's internal viewer page (viewer.html, part of the extension itself) when the user clicks a file. We do not read any user tabs, URLs, titles or contents.
 ```
 
-### Justificación del propósito único (Single purpose)
+### Host permissions / `<all_urls>` content script
 ```
-Pretty Markdown Navigator tiene un único propósito: permitir al usuario navegar carpetas locales seleccionadas explícitamente y leer archivos Markdown renderizados con un formato cuidado, sin salir del navegador.
+The extension injects a small content script on all pages (launcher.js) for one purpose only: to render a floating button that lets the user re-open the side panel after collapsing it. The content script:
+- does not read, modify or transmit any page content
+- does not read cookies, localStorage, form data or browser state
+- does not track navigation
+- only adds a single DOM element (the floating button) and forwards click events to the service worker
+
+No host permissions are declared for any other purpose.
 ```
 
-### Política de privacidad (URL)
+### Single-purpose justification
+```
+Pretty Markdown Navigator has one single purpose: to let the user navigate explicitly selected local folders and read Markdown files rendered with a beautiful style, without leaving the browser.
+```
+
+### Privacy policy URL
 ```
 https://github.com/josepedrodiaz/pretty-markdown-navigator/blob/main/PRIVACY.md
 ```
 
-## Prácticas de datos (Data practices)
+## Data practices
 
-Marcar **TODAS** las siguientes opciones como NO recopiladas:
+Mark **ALL** the following as NOT collected:
 
 - ❌ Personally identifiable information
 - ❌ Health information
@@ -137,7 +152,7 @@ Marcar **TODAS** las siguientes opciones como NO recopiladas:
 - ❌ User activity
 - ❌ Website content
 
-Y certificar:
+And certify:
 - ✅ I do not sell or transfer user data to third parties
 - ✅ I do not use or transfer user data for purposes unrelated to the single purpose
 - ✅ I do not use or transfer user data to determine creditworthiness

@@ -2,66 +2,69 @@
 
 [![Manifest V3](https://img.shields.io/badge/manifest-v3-blue)](https://developer.chrome.com/docs/extensions/mv3/intro/) [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE) [![Privacy: 100% local](https://img.shields.io/badge/privacy-100%25%20local-success)](PRIVACY.md)
 
-> Una extensión de Chrome para navegar carpetas locales y leer tus archivos Markdown con un formato precioso, sin salir del navegador.
+> A Chrome extension to browse local folders and read your Markdown files with a beautiful viewer — without leaving the browser.
 
-## ✨ Características
+## ✨ Features
 
-- 📂 **Navegador de carpetas locales** con la File System Access API — todo procesado en local, nada sale de tu equipo.
-- 📑 **Tres vistas en el panel lateral**:
-  - **Carpetas**: árbol expandible/colapsable con búsqueda por nombre.
-  - **Índice**: outline automático del documento abierto, navegable.
-  - **Buscar**: búsqueda dentro del documento actual.
-- 🎨 **Renderizado precioso** con estilo cuidado: encabezados con gradiente, code blocks oscuros estilo GitHub, tablas, blockquotes, listas de tareas y soporte completo de GitHub Flavored Markdown.
-- 🌒 **Tema oscuro nativo** en el panel lateral.
-- 🪟 **Visor a pantalla completa** en pestañas independientes — abre varios documentos a la vez.
-- ⚡ **Rápido y ligero**: sin frameworks, sin telemetría, sin llamadas a servidores.
+- 📂 **Local folder browser** powered by the File System Access API — everything is processed locally, nothing leaves your computer.
+- 📑 **Three views in the side panel**:
+  - **Folders** — expandable/collapsible tree with name search.
+  - **Outline** — automatic outline of the open document, click any heading to jump to it.
+  - **Search** — in-document search with highlighted results.
+- 🎨 **Beautiful rendering** with carefully designed styles: gradient headings, GitHub-style dark code blocks, tables, blockquotes, task lists and full GitHub Flavored Markdown support.
+- 🌒 **Native dark theme** in the side panel.
+- 🪟 **Full-tab viewer** — each Markdown file opens in its own browser tab so you can keep multiple documents open at once.
+- 🪄 **Floating launcher** — a small button on every page lets you re-open the side panel with one click after collapsing it. Right-click the launcher to dismiss it for the session. You can also use the `Ctrl/Cmd + Shift + M` keyboard shortcut.
+- ⚡ **Fast and lightweight** — no frameworks, no telemetry, no server calls.
 
-## 🚀 Instalación
+## 🚀 Installation
 
-### Desde el Chrome Web Store
+### From the Chrome Web Store
 
-*(próximamente)*
+*(coming soon)*
 
-### Modo desarrollador
+### Developer mode
 
-1. Clona o descarga este repo.
-2. Abre `chrome://extensions` en Chrome.
-3. Activa **Modo desarrollador** (esquina superior derecha).
-4. Pulsa **Cargar descomprimida** y selecciona la carpeta del repo.
-5. Haz clic en el icono **M** morado de la barra para abrir el side panel.
+1. Clone or download this repo.
+2. Open `chrome://extensions` in Chrome.
+3. Enable **Developer mode** (top right corner).
+4. Click **Load unpacked** and select the repo folder.
+5. Click the **M** purple icon in the toolbar to open the side panel.
 
-## 🛠 Cómo usar
+## 🛠 How to use
 
-1. Abre el side panel y pulsa **📂 Abrir carpeta**.
-2. Selecciona cualquier carpeta de tu equipo y acepta el permiso del navegador.
-3. Haz clic en cualquier archivo `.md` del árbol — se abrirá en una pestaña a pantalla completa.
-4. Usa las pestañas del panel (📁 / 📑 / 🔍) para alternar entre carpetas, índice del documento y búsqueda.
+1. Open the side panel and click **📂 Open folder**.
+2. Pick any folder from your computer and accept the browser permission prompt.
+3. Click any `.md` file in the tree — it will open in a new full tab.
+4. Use the panel tabs (📁 / 📑 / 🔍) to switch between folders, outline of the current document and in-document search.
+5. To re-open the side panel after closing it, click the floating launcher button at the bottom-right of any page or press `Ctrl/Cmd + Shift + M`.
 
-## 🗂 Estructura del proyecto
+## 🗂 Project structure
 
 ```
 pretty-markdown-navigator/
 ├── manifest.json       # Manifest V3
 ├── background.js       # Service worker
-├── sidepanel.html      # UI del panel lateral (3 vistas)
-├── sidepanel.js        # Navegación, outline, búsqueda
-├── viewer.html         # Página del visor a pantalla completa
-├── viewer.js           # Render del markdown
-├── styles.css          # Estilos (panel + visor)
-├── marked.min.js       # Parser de markdown (local, sin CDN)
-├── icons/              # Iconos 16/48/128
-├── PRIVACY.md          # Política de privacidad
+├── sidepanel.html      # Side panel UI (3 views)
+├── sidepanel.js        # Navigation, outline, in-document search
+├── viewer.html         # Full-tab viewer page
+├── viewer.js           # Markdown rendering + heading anchors
+├── launcher.js         # Floating launcher (content script)
+├── styles.css          # Styles (panel + viewer)
+├── marked.min.js       # Markdown parser (bundled, no CDN)
+├── icons/              # 16/48/128 icons
+├── PRIVACY.md          # Privacy policy
 └── LICENSE             # MIT
 ```
 
-## 🔐 Privacidad
+## 🔐 Privacy
 
-La extensión **no envía nada a ningún servidor**. La carpeta que eliges la lee directamente el navegador con la File System Access API y todo el renderizado ocurre en local. La librería `marked` viene empaquetada — no se carga desde ningún CDN. Lee la [política de privacidad completa](PRIVACY.md) para más detalles.
+The extension **does not send anything to any server**. The folder you pick is read directly by the browser using the File System Access API and all rendering happens locally. The `marked` library is bundled — no CDNs are loaded at runtime. Read the [full privacy policy](PRIVACY.md) for details.
 
-## 🤝 Contribuir
+## 🤝 Contributing
 
-Pull requests bienvenidos. Para cambios grandes, abre un issue primero para discutirlo.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
 
-## 📜 Licencia
+## 📜 License
 
 [MIT](LICENSE)

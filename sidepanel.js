@@ -67,6 +67,11 @@ async function pickFolder() {
     const rootLi = await buildNode(handle, rootName, [rootName], true);
     rootUl.appendChild(rootLi);
     rootLi.classList.remove("collapsed");
+    // Release focus from the button so the next click on the tree registers immediately.
+    try { pickBtn.blur(); } catch (_) {}
+    if (document.activeElement && document.activeElement.blur) {
+      try { document.activeElement.blur(); } catch (_) {}
+    }
   } catch (e) {
     if (e.name !== "AbortError") console.error(e);
   } finally {
@@ -84,13 +89,12 @@ pickBtn.addEventListener("click", (ev) => {
   pickFolder();
 });
 
-// Make sure the panel grabs focus immediately so subsequent clicks register.
+// Make sure the panel grabs focus immediately so the very first click on the
+// "Open folder" button registers reliably. After the picker has been used,
+// pickFolder() blurs the button so subsequent tree clicks work on first try.
 window.addEventListener("DOMContentLoaded", () => {
   try { pickBtn.focus({ preventScroll: true }); } catch (_) {}
 });
-window.addEventListener("focus", () => {
-  try { pickBtn.focus({ preventScroll: true }); } catch (_) {}
-}, { once: true });
 
 async function buildNode(handle, name, pathParts, isRoot = false) {
   const li = document.createElement("li");
