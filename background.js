@@ -1,16 +1,33 @@
 // Manual control of the side panel so it always reopens after the user closes it.
 // We disable the automatic open-on-action-click and listen for the icon click ourselves.
 
-chrome.runtime.onInstalled.addListener(() => {
+// Page opened in the user's browser when they uninstall the extension.
+// Lets us collect feedback (why did you uninstall? what was missing?).
+const UNINSTALL_FEEDBACK_URL =
+  "https://github.com/josepedrodiaz/pretty-markdown-navigator/discussions/1";
+
+function setupSidePanelBehavior() {
   chrome.sidePanel
     .setPanelBehavior({ openPanelOnActionClick: false })
     .catch((error) => console.error(error));
+}
+
+function setupUninstallURL() {
+  try {
+    chrome.runtime.setUninstallURL(UNINSTALL_FEEDBACK_URL);
+  } catch (e) {
+    console.error("setUninstallURL failed:", e);
+  }
+}
+
+chrome.runtime.onInstalled.addListener(() => {
+  setupSidePanelBehavior();
+  setupUninstallURL();
 });
 
 chrome.runtime.onStartup.addListener(() => {
-  chrome.sidePanel
-    .setPanelBehavior({ openPanelOnActionClick: false })
-    .catch((error) => console.error(error));
+  setupSidePanelBehavior();
+  setupUninstallURL();
 });
 
 chrome.action.onClicked.addListener(async (tab) => {
