@@ -207,7 +207,7 @@ async function openMarkdownInTab(fileHandle, pathParts, nodeEl) {
     switchTab("outline");
   } catch (e) {
     console.error(e);
-    alert("No se pudo abrir el archivo: " + e.message);
+    alert("Could not open the file: " + e.message);
   }
 }
 
@@ -248,13 +248,13 @@ function extractHeadings(md) {
 // ---------- Outline rendering ----------
 function renderOutline(filter = "") {
   if (!currentDoc) {
-    outlineEl.innerHTML = `<div class="empty-state"><p>📑 Sin documento</p><small>Abre un <code>.md</code> desde la pestaña de carpetas.</small></div>`;
+    outlineEl.innerHTML = `<div class="empty-state"><p>📑 No document</p><small>Open a <code>.md</code> file from the folders tab.</small></div>`;
     return;
   }
   const q = filter.trim().toLowerCase();
   const items = currentDoc.headings.filter((h) => !q || h.text.toLowerCase().includes(q));
   if (items.length === 0) {
-    outlineEl.innerHTML = `<div class="empty-state"><p>Sin coincidencias</p><small>Prueba con otro término.</small></div>`;
+    outlineEl.innerHTML = `<div class="empty-state"><p>No matches</p><small>Try a different term.</small></div>`;
     return;
   }
   outlineEl.innerHTML = `
@@ -291,11 +291,11 @@ docSearchEl.addEventListener("input", () => renderDocSearch(docSearchEl.value));
 function renderDocSearch(query) {
   const q = query.trim();
   if (!currentDoc) {
-    searchResultsEl.innerHTML = `<div class="empty-state"><p>🔍 Sin documento</p><small>Abre un <code>.md</code> primero.</small></div>`;
+    searchResultsEl.innerHTML = `<div class="empty-state"><p>🔍 No document</p><small>Open a <code>.md</code> file first.</small></div>`;
     return;
   }
   if (!q) {
-    searchResultsEl.innerHTML = `<div class="empty-state"><p>🔍 Empieza a escribir</p><small>Las coincidencias aparecerán aquí.</small></div>`;
+    searchResultsEl.innerHTML = `<div class="empty-state"><p>🔍 Start typing</p><small>Matches will appear here.</small></div>`;
     return;
   }
   const ql = q.toLowerCase();
@@ -313,11 +313,11 @@ function renderDocSearch(query) {
     }
   });
   if (matches.length === 0) {
-    searchResultsEl.innerHTML = `<div class="empty-state"><p>Sin coincidencias</p></div>`;
+    searchResultsEl.innerHTML = `<div class="empty-state"><p>No matches</p></div>`;
     return;
   }
   searchResultsEl.innerHTML = `
-    <div class="results-count">${matches.length} resultado${matches.length === 1 ? "" : "s"}</div>
+    <div class="results-count">${matches.length} result${matches.length === 1 ? "" : "s"}</div>
     <ul class="results-list">
       ${matches.map((m) => `
         <li class="result-item" data-line="${m.line}">

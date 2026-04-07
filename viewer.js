@@ -34,8 +34,8 @@ async function init() {
   const contentEl = document.getElementById("content");
 
   if (!id) {
-    titleEl.textContent = "Sin documento";
-    contentEl.innerHTML = "<p>No se especificó un documento para mostrar.</p>";
+    titleEl.textContent = "No document";
+    contentEl.innerHTML = "<p>No document was specified to display.</p>";
     return;
   }
   currentDocId = id;
@@ -44,13 +44,13 @@ async function init() {
     const data = await chrome.storage.session.get(id);
     const doc = data[id];
     if (!doc) {
-      titleEl.textContent = "Documento no encontrado";
+      titleEl.textContent = "Document not found";
       contentEl.innerHTML =
-        "<p>El documento ya no está disponible. Vuelve al side panel y haz clic en el archivo de nuevo.</p>";
+        "<p>This document is no longer available. Go back to the side panel and click the file again.</p>";
       return;
     }
 
-    titleEl.textContent = doc.title || "Sin título";
+    titleEl.textContent = doc.title || "Untitled";
     pathEl.textContent = doc.path || "";
     document.title = (doc.title || "Markdown") + " — Markdown Navigator";
 
@@ -65,7 +65,7 @@ async function init() {
     }
 
     if (!doc.text || !doc.text.trim()) {
-      html = '<p style="color:#6e7781;font-style:italic;">(Este archivo está vacío)</p>';
+      html = '<p style="color:#6e7781;font-style:italic;">(This file is empty)</p>';
     }
 
     contentEl.innerHTML = html;
