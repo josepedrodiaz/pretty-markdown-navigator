@@ -1,10 +1,11 @@
 {
   "manifest_version": 3,
-  "name": "Markdown Navigator",
-  "version": "1.0.0",
-  "description": "Navega por carpetas locales y visualiza archivos Markdown con un formato precioso.",
+  "name": "Pretty Markdown Navigator",
+  "version": "1.2.1",
+  "description": "Navega carpetas locales y lee tus archivos Markdown con un formato precioso, índice automático y búsqueda. 100% local.",
+  "permissions": ["sidePanel", "storage", "tabs"],
   "action": {
-    "default_title": "Markdown Navigator",
+    "default_title": "Pretty Markdown Navigator",
     "default_icon": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",
@@ -17,7 +18,6 @@
   "side_panel": {
     "default_path": "sidepanel.html"
   },
-  "permissions": ["sidePanel", "storage"],
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
