@@ -14,7 +14,7 @@
 - 🎨 **Beautiful rendering** with carefully designed styles: gradient headings, GitHub-style dark code blocks, tables, blockquotes, task lists and full GitHub Flavored Markdown support.
 - 🌒 **Native dark theme** in the side panel.
 - 🪟 **Full-tab viewer** — each Markdown file opens in its own browser tab so you can keep multiple documents open at once.
-- 🪄 **Floating launcher** — a small button on every page lets you re-open the side panel with one click after collapsing it. Right-click the launcher to dismiss it for the session. You can also use the `Ctrl/Cmd + Shift + M` keyboard shortcut.
+- ⌨️ **Keyboard shortcut** — press `Ctrl/Cmd + Shift + M` from anywhere to re-open the side panel after closing it (the toolbar icon does the same).
 - ⚡ **Fast and lightweight** — no frameworks, no telemetry, no server calls.
 
 ## 🚀 Installation
@@ -37,7 +37,7 @@
 2. Pick any folder from your computer and accept the browser permission prompt.
 3. Click any `.md` file in the tree — it will open in a new full tab.
 4. Use the panel tabs (📁 / 📑 / 🔍) to switch between folders, outline of the current document and in-document search.
-5. To re-open the side panel after closing it, click the floating launcher button at the bottom-right of any page or press `Ctrl/Cmd + Shift + M`.
+5. To re-open the side panel after closing it, click the **M** purple icon in the toolbar or press `Ctrl/Cmd + Shift + M`.
 
 ## 🗂 Project structure
 
@@ -49,7 +49,6 @@ pretty-markdown-navigator/
 ├── sidepanel.js        # Navigation, outline, in-document search
 ├── viewer.html         # Full-tab viewer page
 ├── viewer.js           # Markdown rendering + heading anchors
-├── launcher.js         # Floating launcher (content script)
 ├── styles.css          # Styles (panel + viewer)
 ├── marked.min.js       # Markdown parser (bundled, no CDN)
 ├── icons/              # 16/48/128 icons

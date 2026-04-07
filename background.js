@@ -25,25 +25,6 @@ chrome.action.onClicked.addListener(async (tab) => {
   }
 });
 
-// Open the side panel when the floating launcher button on a page is clicked.
-// chrome.sidePanel.open() requires an active user gesture; the click in the
-// content script propagates the gesture through to this listener.
-chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
-  if (msg && msg.type === "openSidePanel") {
-    const windowId = sender && sender.tab && sender.tab.windowId;
-    if (windowId != null) {
-      chrome.sidePanel
-        .open({ windowId })
-        .then(() => sendResponse({ ok: true }))
-        .catch((e) => {
-          console.error("openSidePanel failed:", e);
-          sendResponse({ ok: false, error: String(e) });
-        });
-      return true; // keep channel open for async response
-    }
-  }
-});
-
 // Optional keyboard shortcut (Cmd/Ctrl+Shift+M) defined in the manifest "commands" key.
 chrome.commands &&
   chrome.commands.onCommand &&

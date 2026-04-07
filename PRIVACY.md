@@ -1,6 +1,6 @@
 # Privacy Policy — Pretty Markdown Navigator
 
-_Last updated: April 6, 2026_
+_Last updated: April 7, 2026_
 
 **Pretty Markdown Navigator** is a Chrome extension that lets you browse local folders and read Markdown files rendered with a beautiful style.
 
@@ -35,19 +35,11 @@ This content is **kept only in your browser's memory** during the session and st
 - `storage` — to pass the open file's content between the side panel and the viewer tab (only `chrome.storage.session`, which is cleared when the browser closes).
 - `tabs` — only to open the extension's internal viewer page (`viewer.html`) when you click a file. The extension does **not** read URLs, titles or contents of any other tabs.
 
-## Content script (floating launcher)
+## Host permissions
 
-The extension injects a small floating launcher button on every web page (via a content script). This button has a single purpose: send a message to the extension's service worker so it can re-open the side panel after you collapse it. The content script:
+**None.** The extension does not declare any host permissions and does not inject any content scripts into web pages. It cannot read or modify the pages you visit.
 
-- **Does not** read, modify or transmit any page content.
-- **Does not** read cookies, localStorage, form data or any other browser state.
-- **Does not** track navigation between pages.
-- Only adds a single DOM element (the floating button) and listens for clicks on that element.
-- Stores a single dismissal flag in the page's own `sessionStorage` (not synced or transmitted).
-
-You can right-click the launcher button to hide it for the rest of the browser session, or disable the extension if you don't want it injected.
-
-The keyboard shortcut `Ctrl/Cmd + Shift + M` provides the same functionality without any content script involvement.
+To re-open the side panel after closing it, click the extension icon in the toolbar or use the keyboard shortcut `Ctrl/Cmd + Shift + M`.
 
 ## Third-party services
 

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Pretty Markdown Navigator",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Browse local folders and read your Markdown files with a beautiful viewer, automatic outline and in-document search. 100% local.",
   "permissions": ["sidePanel", "storage", "tabs"],
   "action": {
@@ -18,14 +18,6 @@
   "side_panel": {
     "default_path": "sidepanel.html"
   },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["launcher.js"],
-      "run_at": "document_idle",
-      "all_frames": false
-    }
-  ],
   "commands": {
     "open-side-panel": {
       "suggested_key": {
