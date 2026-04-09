@@ -51,8 +51,8 @@ The side panel uses a native dark theme that's easy on the eyes during long read
 🪟 FULL-TAB VIEWER
 Each file opens in its own browser tab, so you can keep multiple documents open at once and navigate between them like normal browser tabs.
 
-🪄 FLOATING LAUNCHER + SHORTCUT
-A small floating button on every page lets you re-open the side panel with one click after collapsing it. Right-click the button to dismiss it for the session, or use the Ctrl/Cmd + Shift + M keyboard shortcut.
+⌨️ KEYBOARD SHORTCUT
+Press Ctrl/Cmd + Shift + M to open the side panel instantly from any tab.
 
 ⚡ FAST AND LIGHTWEIGHT
 No heavy frameworks, no telemetry, no server calls. Loads instantly.
@@ -65,7 +65,7 @@ Pretty Markdown Navigator runs 100% locally:
 
 • Does not collect or send any data to any server.
 • No trackers, no analytics, no remote code.
-• No host permissions to read pages you visit (the floating launcher content script only adds a DOM element and never reads page content).
+• No host permissions — the extension never reads pages you visit.
 • The rendering library (marked) is bundled locally — never loaded from a CDN.
 • File contents only live in your browser's memory during the session.
 
@@ -95,7 +95,7 @@ https://github.com/josepedrodiaz/pretty-markdown-navigator
 3. Pick any folder from your computer and accept the browser permission prompt.
 4. Click any .md file in the tree → it opens in a new tab with the beautiful rendering.
 5. Use the side panel tabs to view the document outline or search inside it.
-6. Closed the panel? Click the floating launcher at the bottom-right of any page or press Ctrl/Cmd + Shift + M.
+6. Closed the panel? Click the toolbar icon again or press Ctrl/Cmd + Shift + M.
 
 Suggestions or issues? Open an issue on GitHub.
 ```
@@ -110,22 +110,6 @@ The extension's main interface is a persistent side panel from which the user na
 ### `storage`
 ```
 We use chrome.storage.session (volatile memory cleared when the browser closes) exclusively to pass the open Markdown file's content from the side panel to the viewer tab. Nothing is persisted to disk.
-```
-
-### `tabs`
-```
-We only call chrome.tabs.create() to open the extension's internal viewer page (viewer.html, part of the extension itself) when the user clicks a file. We do not read any user tabs, URLs, titles or contents.
-```
-
-### Host permissions / `<all_urls>` content script
-```
-The extension injects a small content script on all pages (launcher.js) for one purpose only: to render a floating button that lets the user re-open the side panel after collapsing it. The content script:
-- does not read, modify or transmit any page content
-- does not read cookies, localStorage, form data or browser state
-- does not track navigation
-- only adds a single DOM element (the floating button) and forwards click events to the service worker
-
-No host permissions are declared for any other purpose.
 ```
 
 ### Single-purpose justification
